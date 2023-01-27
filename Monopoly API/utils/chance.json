@@ -1,0 +1,62 @@
+{
+    "Chance cards": [
+        {
+            "text": "This card may be kept until needed or sold\nGet out of jail free"
+        },
+        {
+            "text": "Take a ride on the Reading\nIf you pass GO collect $200",
+            "new position": 5
+        },
+        {
+            "text": "Go directly to Jail\nDo not pass GO, do not collect $200",
+            "new position": 10
+        },
+        {
+            "text": "Advance token to nearest utility.\nIf UNOWNED you may buy it from bank.\nIf OWNED, throw dice and pay owner a total ten times the amount thrown.",
+            "new position": "Next utility"
+        },
+        {
+            "text": "Make general repairs on all your property\nFor each house pay $25\nFor reach hotel $100"
+        },
+        {
+            "text": "Advance to GO\n(Collect $200)",
+            "new position": 0
+        },
+        {
+            "text": "Your building and loan matures\nCollect $150"
+        },
+        {
+            "text": "Go back 3 spaces",
+            "new position": "Back 3 spaces"
+        },
+        {
+            "text": "You have been elected chairman of the board\nPay each player $50"
+        },
+        {
+            "text": "Advance token to the nearest Railroad and pay owner Twice the Rental to which he is otherwise entitled.\nIf Railroad is unowned, you may buy it from the Bank.",
+            "new position": "Next railroad"
+        },
+        {
+            "text": "Advance token to the nearest Railroad and pay owner Twice the Rental to which he is otherwise entitled.\nIf Railroad is unowned, you may buy it from the Bank.",
+            "new position": "Next railroad"
+        },
+        {
+            "text": "Take a walk on the board walk\nAdvance token to Board Walk",
+            "new position": 39
+        },
+        {
+            "text": "Advance to Illinois Ave.",
+            "new position": 24
+        },
+        {
+            "text": "Bank pays you dividend of $50"
+        },
+        {
+            "text": "Advance to St. Charles Place\nIf you pass GO, collect $200",
+            "new position": 11
+        },
+        {
+            "text": "Pay poor tax of $15"
+        }
+    ]
+}

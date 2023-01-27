@@ -1,0 +1,54 @@
+{
+    "Community Chest cards": [
+        {
+            "text": "Pay hospital $100"
+        },
+        {
+            "text": "Bank error in your favor\nCollect $200"
+        },
+        {
+            "text": "You inherit $100"
+        },
+        {
+            "text": "Xmas fund matures\nCollect $100"
+        },
+        {
+            "text": "Get out of jail, free\nThis card may be kept until needed or sold"
+        },
+        {
+            "text": "From sale of stock you get $45"
+        },
+        {
+            "text": "Life insurance matures\nCollect $100"
+        },
+        {
+            "text": "Pay school tax of $150"
+        },
+        {
+            "text": "Doctor's fee\nPay $50"
+        },
+        {
+            "text": "GO TO JAIL\nGo Directly to Jail\nDO NOT PASS GO\nDO NOT COLLECT $200",
+            "new position": 10
+        },
+        {
+            "text": "You have won second prize in a beauty contest\nCollect $10"
+        },
+        {
+            "text": "Income tax refund\nCollect $20"
+        },
+        {
+            "text": "Advance to GO\n(Collect $200)",
+            "new position": 0
+        },
+        {
+            "text": "Grand Opera Opening\nCollect $50 from every player\nFor opening night seats"
+        },
+        {
+            "text": "You are assessed for street repairs\n$40 per house\n$115 per hotel"
+        },
+        {
+            "text": "Receive for services $25"
+        }
+    ]
+}
