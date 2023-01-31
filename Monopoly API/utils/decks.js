@@ -17,8 +17,8 @@ const shuffle = (deck) => {
 }
 
 const drawCard = (deck) => {
-    const card = deck[0];
-    deck.push(deck.shift());
+    const card = deck.shift();
+    deck.push(card);
     return card;
 }
 
