@@ -9,6 +9,7 @@ const getRailroads = () => {
     return output;
 };
 
+// Returns the average profit for each railroad space as though it were the only one owned
 const outputProfitForIndividualRailroads = (counts, numberOfGames) => {
     const output = {};
     for(let railroad in getRailroads()) {
@@ -20,6 +21,7 @@ const outputProfitForIndividualRailroads = (counts, numberOfGames) => {
     return output;
 };
 
+// Returns the average profit for each pair of railroad spaces as though they were the only ones owned
 const outputProfitForPairsOfRailroads = (counts, numberOfGames) => {
     const output = {};
     for (let i = 0; i < 3; i++) {
@@ -38,6 +40,7 @@ const outputProfitForPairsOfRailroads = (counts, numberOfGames) => {
     return output;
 };
 
+// Returns the average profit for every combination of three railroad spaces as though they were the only ones owned
 const outputProfitForTripletsOfRailroads = (counts, numberOfGames) => {
     const output = {};
     for (let i = 0; i < 2; i++) {
@@ -60,6 +63,7 @@ const outputProfitForTripletsOfRailroads = (counts, numberOfGames) => {
     return output;
 };
 
+// Returns the average profit for all four railroad spaces as though all four were owned
 const outputProfitForAllFourRailroads = (counts, numberOfGames) => {
     const allFourRailroads = "All four railroads";
     const output = {"All four railroads": 0};

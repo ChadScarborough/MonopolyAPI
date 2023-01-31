@@ -1,3 +1,4 @@
+// Represents useful properties of a dice roll consisting of two 6-sided dice
 class diceRollObj {
     constructor(roll1, roll2) {
         this.roll1 = roll1;

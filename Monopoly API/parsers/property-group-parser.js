@@ -6,6 +6,7 @@ const getPropertyGroupByName = (name) => {
     return propertyGroupsByName[name];
 };
 
+// Takes the individual profits for each property and converts them into collective profits for each property group
 const convertIndividualProfitsToGroupProfits = (counts, numberOfGames, calcFunction) => {
     const individuals = (calcFunction(counts, numberOfGames));
     const output = {};

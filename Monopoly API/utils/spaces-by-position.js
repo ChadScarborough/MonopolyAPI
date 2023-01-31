@@ -27,6 +27,30 @@ const otherPositions = [
     0, 4, 10, 20, 30, 38
 ];
 
+// Takes an integer position from 0 to 39 and returns the space located at that position on the board
+const getSpaceByPosition = (position) => {
+    if (propertyPositions.includes(position)) {
+        return getPropertyByPosition(position);
+    }
+    if (railroadPositions.includes(position)) {
+        return getRailroadByPosition(position);
+    }
+    if (utilityPositions.includes(position)) {
+        return getUtilityByPosition(position);
+    }
+    if (chancePositions.includes(position)) {
+        return getChanceByPosition(position);
+    }
+    if (communityChestPositions.includes(position)) {
+        return getCommunityChestByPosition(position);
+    }
+    if (otherPositions.includes(position)) {
+        return getOtherByPosition(position);
+    }
+    console.log("ERROR: No space at given position");
+    return undefined;
+};
+
 const getPropertyByPosition = (position) => {
     const properties = spaces.Properties;
     for (let i in properties) {
@@ -67,7 +91,7 @@ const getChanceByPosition = (position) => {
             return chance[i];
         }
     }
-    console.log("ERROR: No such chance space");
+    console.log("ERROR: No such Chance space");
     return undefined;
 };
 
@@ -78,7 +102,7 @@ const getCommunityChestByPosition = (position) => {
             return communityChest[i];
         }
     }
-    console.log("ERROR: No such community chest space");
+    console.log("ERROR: No such Community Chest space");
     return undefined;
 };
 
@@ -90,29 +114,6 @@ const getOtherByPosition = (position) => {
         }
     }
     console.log("ERROR: No such space");
-    return undefined;
-};
-
-const getSpaceByPosition = (position) => {
-    if (propertyPositions.includes(position)) {
-        return getPropertyByPosition(position);
-    }
-    if (railroadPositions.includes(position)) {
-        return getRailroadByPosition(position);
-    }
-    if (utilityPositions.includes(position)) {
-        return getUtilityByPosition(position);
-    }
-    if (chancePositions.includes(position)) {
-        return getChanceByPosition(position);
-    }
-    if (communityChestPositions.includes(position)) {
-        return getCommunityChestByPosition(position);
-    }
-    if (otherPositions.includes(position)) {
-        return getOtherByPosition(position);
-    }
-    console.log("ERROR: No space at given position");
     return undefined;
 };
 

@@ -3,16 +3,20 @@ const { getSpaceByPosition } = require('./spaces-by-position');
 const { drawCommunityChestCard, drawChanceCard } = require('./decks');
 
 function Player() {
-    this.position = 0,
-    this.consecutiveDoubles = 0,
-    this.advance = function(distance) {
+    // Position around the board
+    this.position = 0, 
+    // Number of consecutive times dice rolls have been doubles (3 sends the player to jail)
+    this.consecutiveDoubles = 0, 
+    // Moves the player around the board
+    this.advance = function(distance) { 
         this.position = (this.position + distance) % 40;
         if (this.position === 30) {
             this.position = 10;
             this.consecutiveDoubles = 0;
         }
     },
-    this.rollDiceToAdvance = function() {
+    // Rolls dice, checks for consecutive doubles, and advances the player as appropriate
+    this.rollDiceToAdvance = function() { 
         const roll = rollDice();
         if (roll.isDouble) {
             this.consecutiveDoubles++;
@@ -28,6 +32,17 @@ function Player() {
             this.advance(roll.value);
         }
     },
+    // Handles dice rolls as well as movement by Chance and Community Chest cards
+    /* 
+    This implementation isn't 100% accurate, because normally landing on a Chance space and being moved to
+    a new space by the card drawn all happens on a single turn, but here a player lands on the space one turn
+    and is moved on the next turn in place of rolling dice. However, given a sufficiently large sample size,
+    the effect on the data is ultimately negligible. The only noticeable effect will be a slight 
+    overrepresentation of Chance and (to a lesser extent) Community Chest spaces in the raw counts of spaces 
+    where players ended their turns (though, in a sense, that count is more accurate because it represents
+    the number of times players landed on those spaces at all as opposed to completely ending their turns on
+    them).
+    */
     this.takeTurn = function() {
         if (this.getCurrentSpace().type === "community chest") {
             if (this.moveByCommunityChestCard()) {

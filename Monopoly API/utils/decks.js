@@ -6,6 +6,7 @@ const chanceDeck = chance['Chance cards'];
 
 let shuffledCommunityChestDeck, shuffledChanceDeck;
 
+// Takes a json representing a deck and returns a shuffled array of that deck's cards
 const shuffle = (deck) => {
     const outputDeck = [];
     while (deck.length > 0) {
@@ -16,6 +17,7 @@ const shuffle = (deck) => {
     return outputDeck;
 }
 
+// Returns the top card of a deck while rotating that card to the back
 const drawCard = (deck) => {
     const card = deck.shift();
     deck.push(card);

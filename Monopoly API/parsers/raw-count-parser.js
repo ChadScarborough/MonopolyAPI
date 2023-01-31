@@ -2,14 +2,16 @@ const { getSpaceByPosition } = require('../utils/spaces-by-position');
 
 const propertyGroups = ["purple", "light blue", "magenta", "orange", "red", "yellow", "green", "blue", "railroad", "utility", "community chest", "chance", "other"]
 
+// Returns the number of times a player ended their turn on each space over the course of all simulated games
 const outputIndividualPropertiesWithRawCounts = (counts) => {
-    const output = []
+    const output = {}
     for (let i = 0; i < counts.length; i++) {
-        output.push(`${ getSpaceByPosition(i).name } : ${counts[i]}`);
+        output[getSpaceByPosition(i).name] = counts[i];
     }
     return output;
 };
 
+// Returns the number of times a player ended their turn on each type of space over the course of all simulated games
 const outputPropertyGroupsWithRawCounts = (counts) => {
     const output = {};
     for (let group in propertyGroups) {
@@ -33,5 +35,3 @@ module.exports = {
     outputIndividualPropertiesWithRawCounts,
     outputPropertyGroupsWithRawCounts
 };
-
-//TODO: Make output formats consistent (all arrays or all objects)

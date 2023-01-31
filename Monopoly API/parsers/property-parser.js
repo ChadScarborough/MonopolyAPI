@@ -1,5 +1,6 @@
 const { getSpaceByPosition } = require('../utils/spaces-by-position');
 
+// Calculates the average profit margin for each individual property over all simulated games with various levels of development
 const outputProfitForIndividualProperties = (counts, numberOfGames, rentKey, houseMultiplier, rentMultiplier=1) => {
     const output = {};
     for(let i = 0; i < counts.length; i++) {
