@@ -1,5 +1,7 @@
 const { getSpaceByPosition } = require('../utils/spaces-by-position');
 
+const propertyGroups = ["purple", "light blue", "magenta", "orange", "red", "yellow", "green", "blue", "railroad", "utility", "community chest", "chance", "other"]
+
 const outputIndividualPropertiesWithRawCounts = (counts) => {
     const output = []
     for (let i = 0; i < counts.length; i++) {
@@ -24,9 +26,12 @@ const outputPropertyGroupsWithRawCounts = (counts) => {
         }
         output[type] += counts[i];
     };
+    return output;
 };
 
 module.exports = {
     outputIndividualPropertiesWithRawCounts,
     outputPropertyGroupsWithRawCounts
 };
+
+//TODO: Make output formats consistent (all arrays or all objects)
