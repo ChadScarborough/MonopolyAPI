@@ -28,7 +28,7 @@ const outputProfitForIndividualUtilities = (counts, numberOfGames) => {
     for(let utility in getUtilities()) {
         const space = getUtilities()[utility];
         const profit = calculateUtilityProfit(utility, counts, numberOfGames, 4);
-        output[space.name] = profit;
+        output[space.name] = Math.round(profit * 100) / 100;
     }
     return output;
 };
