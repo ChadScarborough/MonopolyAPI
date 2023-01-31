@@ -1,3 +1,5 @@
+const { getSpaceByPosition } = require('../utils/spaces-by-position');
+
 const getRailroads = () => {
     const output = [];
     output.push(getSpaceByPosition(5));
@@ -60,14 +62,14 @@ const outputProfitForTripletsOfRailroads = (counts, numberOfGames) => {
 
 const outputProfitForAllFourRailroads = (counts, numberOfGames) => {
     const allFourRailroads = "All four railroads";
-    const output = {allFourRailroads: 0};
+    const output = {"All four railroads": 0};
     for(let railroad in getRailroads()) {
         const space = getRailroads()[railroad];
         const income = (counts[(railroad * 10) + 5] * space["four railroads"]) / numberOfGames;
         const profit = income - space.price
-        output[allFourRailroads] += profit;
+        output["All four railroads"] += profit;
     };
-    output[allFourRailroads] = Math.round(output[allFourRailroads] * 100) / 100;
+    output["All four railroads"] = Math.round(output["All four railroads"] * 100) / 100;
     return output;
 };
 
