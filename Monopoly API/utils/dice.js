@@ -7,12 +7,12 @@ class diceRollObj {
     }
 };
 
-const dieRoll = () => Math.ceil(Math.random() * 6);
+const rollDie = () => Math.ceil(Math.random() * 6);
 
-const diceRoll = () => {
-    const roll1 = dieRoll();
-    const roll2 = dieRoll();
+const rollDice = () => {
+    const roll1 = rollDie();
+    const roll2 = rollDie();
     return new diceRollObj(roll1, roll2);
 }
 
-module.exports = { diceRoll };
+module.exports = { rollDice };

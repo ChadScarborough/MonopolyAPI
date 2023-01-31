@@ -1,4 +1,4 @@
-const { diceRoll } = require('./dice');
+const { rollDice } = require('./dice');
 const { getSpaceByPosition } = require('./spaces-by-position');
 const { drawCommunityChestCard, drawChanceCard } = require('./decks');
 
@@ -13,7 +13,7 @@ function Player() {
         }
     },
     this.rollDiceToAdvance = function() {
-        const roll = diceRoll();
+        const roll = rollDice();
         if (roll.isDouble) {
             this.consecutiveDoubles++;
         }
@@ -42,7 +42,7 @@ function Player() {
         this.rollDiceToAdvance();
     },
     this.rollDice = function() {
-        return diceRoll();
+        return rollDice();
     },
     this.getCurrentSpace = function() {
         return getSpaceByPosition(this.position);
@@ -59,12 +59,6 @@ function Player() {
     },
     this.advanceToSpace = function(position) {
         this.position = position;
-    },
-    this.payOneUtility = function() {
-        return 4 * diceRoll();
-    },
-    this.payTwoUtilities = function() {
-        return 10 * diceRoll();
     },
     this.drawChance = function() {
         return drawChanceCard();
@@ -98,6 +92,6 @@ function Player() {
     this.moveByChanceCard = function() {
         return this.moveByCard(this.drawChance());
     }
-}
+};
 
 module.exports = { Player };
