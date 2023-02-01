@@ -2,16 +2,17 @@ const { requestDataProxy } = require('./request-handler');
 const express = require('express');
 
 const app = new express();
+const numberRegex = /^\d+$/;
 
-app.get('/api/query', (req, res) => {
+app.get('/api', (req, res) => {
     const { games, turns, opponents } = req.query;
-    if (!games || !turns || !opponents) {
-        res.status(400).send("Invalid query");
+    if (!games || !turns || !opponents || !numberRegex.test(games) || !numberRegex.test(turns) || !numberRegex.test(opponents)) {
+        res.status(400).send("Invalid query. Query must specify an integer number of 'games', 'turns', and 'opponents' such that the product of those numbers is not greater than 5 million.");
         return;
     }
     requestDataAsync(Number(games), Number(turns), Number(opponents))
         .then(data => res.status(200).send(data))
-        .catch(err => res.status(400).send("Error encountered"));
+        .catch(err => res.status(500).send("Error encountered"));
 })
 
 app.listen(5000, () => {
